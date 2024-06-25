@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_lql5v"]
 [ext_resource type="Texture2D" uid="uid://ss1qtipnywjf" path="res://Tilemap/tilemap.png" id="2_cm6de"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_khln1"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqk76"]
+radius = 3.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7epq3"]
 atlas = ExtResource("2_cm6de")
@@ -30,7 +31,9 @@ animations = [{
 script = ExtResource("1_lql5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_khln1")
+position = Vector2(0, 5)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_pqk76")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5.85, 5.85)

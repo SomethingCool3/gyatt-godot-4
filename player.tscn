@@ -1,9 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://15v1nswevuwj"]
+[gd_scene load_steps=6 format=3 uid="uid://15v1nswevuwj"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_lql5v"]
-[ext_resource type="Texture2D" uid="uid://cl2sw4wnt3dyx" path="res://icon.svg" id="2_yjmys"]
+[ext_resource type="Texture2D" uid="uid://ss1qtipnywjf" path="res://Tilemap/tilemap.png" id="2_cm6de"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khln1"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7epq3"]
+atlas = ExtResource("2_cm6de")
+region = Rect2(51, 119, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qqm7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7epq3")
+}],
+"loop": true,
+"name": &"barbarian",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lql5v")
@@ -11,11 +32,10 @@ script = ExtResource("1_lql5v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_khln1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, 9.53674e-07)
-scale = Vector2(0.128906, 0.128906)
-texture = ExtResource("2_yjmys")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5.85, 5.85)
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2qqm7")
+animation = &"barbarian"

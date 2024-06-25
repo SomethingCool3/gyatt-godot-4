@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://15v1nswevuwj"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_lql5v"]
+[ext_resource type="Texture2D" uid="uid://cl2sw4wnt3dyx" path="res://icon.svg" id="2_yjmys"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lql5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yjmys")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
